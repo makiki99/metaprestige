@@ -12,7 +12,7 @@ function getGain() {
 	data.prestiges.forEach(function (el) {
 		gain *= 1+el;
 	})
-	return gain;
+	return Math.floor(gain*multiFromOthers);
 }
 
 function getRequirement(id) {
@@ -61,7 +61,7 @@ function draw() {
 			document.getElementById("tier"+(i+1)+"btn").disabled = true;
 		}
 	})
-	document.getElementById("bonus_taken").innerHTML = multiFromOthers;
+	document.getElementById("bonus_taken").innerHTML = multiFromOthers.toPrecision(2);
 	document.getElementById("bonus_given").innerHTML = data.multiForOthers;
 }
 
