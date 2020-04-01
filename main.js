@@ -76,7 +76,7 @@ function updateMultiFromOthers() {
 	if (localStorage.QUADRATIC_SHITPOST) {
 		let tmp_data = JSON.parse(localStorage.QUADRATIC_SHITPOST);
 		let total = 0;
-		for (let x = 0; i < tmp_data.prestiges.length; i++) {
+		for (let x = 0; x < tmp_data.prestiges.length; x++) {
 			const el = tmp_data.prestiges[x];
 			for (let y = 0; y < el.length; y++) {
 				total += el[y];
@@ -87,7 +87,7 @@ function updateMultiFromOthers() {
 	if (localStorage.OH_NO) {
 		let tmp_data = JSON.parse(localStorage.OH_NO);
 		let total = 0;
-		for (let x = 0; i < tmp_data.prestiges.length; i++) {
+		for (let x = 0; x < tmp_data.prestiges.length; x++) {
 			const el = tmp_data.prestiges[x];
 			for (let y = 0; y < el.length; y++) {
 				for (let z = 0; z < el[y].length; z++) {
