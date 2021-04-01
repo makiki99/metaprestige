@@ -7,6 +7,20 @@ var data = {
 
 var multiFromOthers = 0;
 
+function resetCheck() {
+    if (localStorage.RESET_4) {
+        data = {
+            coins: 0,
+            prestiges: [0,0,0,0,0,0,0,0,0,0],
+            tokens: 0,
+            multiForOthers: 1
+        };
+        localStorage.removeItem("RESET_4");
+    }
+    return false;
+}
+
+
 function getGain() {
 	var gain = 1;
 	data.prestiges.forEach(function (el) {
@@ -45,6 +59,7 @@ function activatePrestige(id) {
 
 function update() {
 	data.coins += getGain();
+    resetCheck();
 	localStorage.META = JSON.stringify(data);
 }
 
