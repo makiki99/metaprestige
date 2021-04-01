@@ -20,6 +20,17 @@ function resetCheck() {
     return false;
 }
 
+function getPPBonus() {
+    if (localStorage.PP) {
+        let temp = JSON.parse(localStorage.PP).prestiges;
+        var out = 1;
+        temp.forEach(function (el) {
+            out *= 1+el;
+        });
+        return out*getPPBonus();
+    }
+    return 1;
+}
 
 function getGain() {
 	var gain = 1;
