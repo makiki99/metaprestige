@@ -27,7 +27,7 @@ function getPPBonus() {
         temp.forEach(function (el) {
             out *= 1+el;
         });
-        return out*getPPBonus();
+        return out;
     }
     return 1;
 }
@@ -37,7 +37,7 @@ function getGain() {
 	data.prestiges.forEach(function (el) {
 		gain *= 1+el;
 	})
-	return Math.floor(gain*multiFromOthers);
+	return Math.floor(gain*multiFromOthers*getPPBonus());
 }
 
 function getRequirement(id) {
